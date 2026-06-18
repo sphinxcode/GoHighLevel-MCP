@@ -402,7 +402,7 @@ class GHLMCPHttpServer {
       }
 
       try {
-        await transport.handlePostMessage(req, res);
+        await transport.handlePostMessage(req, res, req.body);
       } catch (error) {
         console.error(`[GHL MCP HTTP] Message handling error for session ${sessionId}:`, error);
         if (!res.headersSent) {
